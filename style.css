@@ -25,6 +25,14 @@ body {
   background: linear-gradient(180deg, var(--bg-alt), var(--bg));
 }
 
+.hero .logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
@@ -91,6 +99,13 @@ section h2 {
   align-items: center;
   justify-content: center;
   color: var(--muted);
+  border-radius: 8px;
+}
+
+.gallery-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 8px;
 }
 
