@@ -109,6 +109,10 @@ section h2 {
   border-radius: 8px;
 }
 
+.gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
 .pricing-note {
   text-align: center;
   color: var(--muted);
