@@ -12,27 +12,29 @@
   <img src="Images/logo.jpg" alt="Morgans Mobile Mechanics logo" class="logo">
   <h1>Morgans Mobile Mechanics</h1>
   <p>We come to you. Quality auto repair, wherever you are.</p>
+  <p class="service-area">Serving Jacksonville Beach and surrounding areas</p>
   <a href="#contact" class="cta">Book a Service</a>
 </header>
 
 <section class="gallery">
   <h2>Our Work</h2>
-  <div class="grid gallery-grid">
-    <img src="Images/gallery-1.jpg" alt="Transmission and brake repair work" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-2.jpg" alt="CV axle replacement" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-3.jpg" alt="Brake caliper removed for service" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-4.jpg" alt="Truck raised on jack stands for undercarriage work" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-5.jpg" alt="Brake rotor and wheel hub close-up" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-6.jpg" alt="Engine wiring and ignition coil service" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-7.jpg" alt="Suspension bushing and CV boot close-up" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-8.jpg" alt="GMC truck engine bay" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-9.jpg" alt="Brake caliper and pads mounted" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-10.jpg" alt="Chrysler 300 engine replacement" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-11.jpg" alt="Alternator and serpentine belt engine bay" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-12.jpg" alt="Mercedes-Benz on the lift" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-13.jpg" alt="Air suspension strut" class="gallery-img" loading="lazy">
-    <img src="Images/gallery-14.jpg" alt="Power steering pump close-up" class="gallery-img" loading="lazy">
+  <div class="carousel">
+    <img src="Images/gallery-1.jpg" alt="Transmission and brake repair work" class="carousel-img active">
+    <img src="Images/gallery-2.jpg" alt="CV axle replacement" class="carousel-img">
+    <img src="Images/gallery-3.jpg" alt="Brake caliper removed for service" class="carousel-img">
+    <img src="Images/gallery-4.jpg" alt="Truck raised on jack stands for undercarriage work" class="carousel-img">
+    <img src="Images/gallery-5.jpg" alt="Brake rotor and wheel hub close-up" class="carousel-img">
+    <img src="Images/gallery-6.jpg" alt="Engine wiring and ignition coil service" class="carousel-img">
+    <img src="Images/gallery-7.jpg" alt="Suspension bushing and CV boot close-up" class="carousel-img">
+    <img src="Images/gallery-8.jpg" alt="GMC truck engine bay" class="carousel-img">
+    <img src="Images/gallery-9.jpg" alt="Brake caliper and pads mounted" class="carousel-img">
+    <img src="Images/gallery-10.jpg" alt="Chrysler 300 engine replacement" class="carousel-img">
+    <img src="Images/gallery-11.jpg" alt="Alternator and serpentine belt engine bay" class="carousel-img">
+    <img src="Images/gallery-12.jpg" alt="Mercedes-Benz on the lift" class="carousel-img">
+    <img src="Images/gallery-13.jpg" alt="Air suspension strut" class="carousel-img">
+    <img src="Images/gallery-14.jpg" alt="Power steering pump close-up" class="carousel-img">
   </div>
+  <div class="carousel-dots"></div>
 </section>
 
 <section class="services">
@@ -160,12 +162,43 @@
 
 <section id="contact" class="contact">
   <h2>Get In Touch</h2>
-  <p>Email: <a href="mailto:jtsbaenot@gmail.com">jtsbaenot@gmail.com</a></p>
+  <p>Phone: <a href="tel:+19044286339">904-428-6339</a></p>
+  <p>Email: <a href="mailto:morgansautorepairservice@gmail.com">morgansautorepairservice@gmail.com</a></p>
+  <img src="Images/qr-code.png" alt="QR code linking to this site" class="qr-code">
+  <p class="qr-caption">Scan to pull this site up on your phone</p>
 </section>
 
 <footer>
   <p>&copy; 2026 Morgans Mobile Mechanics. All rights reserved.</p>
 </footer>
+
+<script>
+  const slides = document.querySelectorAll(".carousel-img");
+  const dotsContainer = document.querySelector(".carousel-dots");
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.className = "dot" + (i === 0 ? " active" : "");
+    dot.setAttribute("aria-label", "Show photo " + (i + 1));
+    dot.addEventListener("click", () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function goTo(index) {
+    slides[current].classList.remove("active");
+    dots[current].classList.remove("active");
+    current = index;
+    slides[current].classList.add("active");
+    dots[current].classList.add("active");
+  }
+
+  setInterval(() => {
+    goTo((current + 1) % slides.length);
+  }, 4000);
+</script>
 
 </body>
 </html>
