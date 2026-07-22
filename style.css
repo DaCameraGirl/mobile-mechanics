@@ -109,6 +109,66 @@ section h2 {
   border-radius: 8px;
 }
 
+.pricing-note {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price-group {
+  background: var(--bg-alt);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  padding: 0 1.25rem;
+}
+
+.price-group summary {
+  cursor: pointer;
+  padding: 1rem 0;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+}
+
+.price-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.price-group summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.price-group[open] summary::after {
+  content: "\2212";
+}
+
+.price-list {
+  list-style: none;
+  padding: 0 0 1rem 0;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid #232a35;
+  color: var(--muted);
+}
+
+.price-list li span:last-child {
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .contact {
   text-align: center;
 }
