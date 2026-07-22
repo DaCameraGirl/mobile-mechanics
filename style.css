@@ -20,9 +20,33 @@ body {
 }
 
 .hero {
+  position: relative;
   text-align: center;
   padding: 6rem 1.5rem;
   background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+}
+
+.qr-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-align: center;
+}
+
+.qr-badge .qr-code {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  padding: 4px;
+  border-radius: 6px;
+  display: block;
+}
+
+.qr-badge span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--muted);
 }
 
 .hero .logo {
@@ -242,21 +266,6 @@ section h2 {
 
 .contact a {
   color: var(--accent);
-}
-
-.qr-code {
-  width: 160px;
-  height: 160px;
-  margin: 2rem auto 0.5rem;
-  background: #fff;
-  padding: 8px;
-  border-radius: 8px;
-  display: block;
-}
-
-.qr-caption {
-  color: var(--muted);
-  font-size: 0.9rem;
 }
 
 footer {
