@@ -14,6 +14,7 @@
     <span>Scan me</span>
   </div>
   <img src="Images/logo.jpg" alt="Morgans Mobile Mechanics logo" class="logo">
+  <p class="legal-name">Morgans Mobile Mechanic Services LLC</p>
   <h1>Morgans Mobile Mechanics</h1>
   <p>We come to you. Quality auto repair, wherever you are.</p>
   <p class="service-area">Serving Jacksonville Beach and surrounding areas</p>
@@ -199,13 +200,30 @@
     dots[current].classList.add("active");
   }
 
+  let autoplay;
+
+  function startAutoplay() {
+    clearInterval(autoplay);
+    autoplay = setInterval(() => {
+      goTo((current + 1) % slides.length);
+    }, 4000);
+  }
+
   document.querySelector(".carousel-prev").addEventListener("click", () => {
     goTo((current - 1 + slides.length) % slides.length);
+    startAutoplay();
   });
 
   document.querySelector(".carousel-next").addEventListener("click", () => {
     goTo((current + 1) % slides.length);
+    startAutoplay();
   });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => startAutoplay());
+  });
+
+  startAutoplay();
 </script>
 
 </body>
