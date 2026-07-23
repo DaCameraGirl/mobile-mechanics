@@ -37,6 +37,8 @@
     <img src="Images/gallery-12.jpg" alt="Mercedes-Benz on the lift" class="carousel-img">
     <img src="Images/gallery-13.jpg" alt="Air suspension strut" class="carousel-img">
     <img src="Images/gallery-14.jpg" alt="Power steering pump close-up" class="carousel-img">
+    <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous photo">&#10094;</button>
+    <button type="button" class="carousel-arrow carousel-next" aria-label="Next photo">&#10095;</button>
   </div>
   <div class="carousel-dots"></div>
 </section>
@@ -197,9 +199,13 @@
     dots[current].classList.add("active");
   }
 
-  setInterval(() => {
+  document.querySelector(".carousel-prev").addEventListener("click", () => {
+    goTo((current - 1 + slides.length) % slides.length);
+  });
+
+  document.querySelector(".carousel-next").addEventListener("click", () => {
     goTo((current + 1) % slides.length);
-  }, 4000);
+  });
 </script>
 
 </body>
