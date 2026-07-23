@@ -69,32 +69,33 @@ body {
   }
 }
 
-.legal-name {
-  font-size: 1.05rem;
+.hero .legal-name {
+  font-size: clamp(1.9rem, 5.5vw, 2.9rem);
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
-  color: #c3c8cf;
-  background: linear-gradient(
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  color: #8f949c;
+  background-image: linear-gradient(
     115deg,
-    #7d838c 0%,
-    #f4f6f8 12%,
-    #9aa0a8 24%,
-    #ffffff 38%,
-    #6b7178 50%,
-    #ffffff 62%,
-    #9aa0a8 76%,
-    #f4f6f8 88%,
-    #7d838c 100%
+    #141517 0%,
+    #ffffff 14%,
+    #3a3d42 26%,
+    #f5f6f8 38%,
+    #17181b 50%,
+    #eef0f2 62%,
+    #2a2c30 74%,
+    #ffffff 86%,
+    #141517 100%
   );
-  background-size: 250% auto;
+  background-size: 220% auto;
   background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
-  animation: chrome-shine 6s linear infinite;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.7);
+  animation: chrome-shine 5s linear infinite;
 }
 
 @keyframes chrome-shine {
@@ -102,7 +103,7 @@ body {
     background-position: 0% 50%;
   }
   100% {
-    background-position: 250% 50%;
+    background-position: 220% 50%;
   }
 }
 
@@ -209,11 +210,22 @@ section h2 {
   height: 100%;
   object-fit: cover;
   opacity: 0;
+  transform: scale(1);
   transition: opacity 1s ease;
 }
 
 .carousel-img.active {
   opacity: 1;
+  animation: kenburns 4.5s ease-in-out forwards;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
 }
 
 .carousel-arrow {
@@ -341,4 +353,18 @@ footer {
   padding: 2rem;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+footer .credit {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+footer .credit a:hover {
+  color: var(--accent);
 }
